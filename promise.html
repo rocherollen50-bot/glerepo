@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const myPromise =   new Promise((resolve , reject) =>
+    {
+      setTimeout(() =>    
+    {
+    // one way - 
+    //   const success = true;
+    //   if(success){
+    //      fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response => response.json())
+    //   .then(data => resolve(data))
+    //   .catch(error => reject(error));
+    //   }
+    //   else{
+    //     reject("Some error is there while fetching")
+    //   } 
+ 
+    //2nd way
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+        //checking the response status is ok or not
+        if(!response.ok){
+          throw new Error("Failed to fetch users");
+        }
+      
+      return response.json(); 
+    })
+    .then(data=> {
+        // if response is ok then resolve the promise with the data
+        resolve(data);
+    })
+    .catch(error => {
+        // if there's an error, reject the promise
+        reject(error.message);
+    })
+
+    }, 5000)
+    });
+     // asynchronously the other tasks will run immediately without waiting for the data to be fetched from the api, which is a key feature of JavaScript's non-blocking behavior.
+        console.log("fetching data .... is taking some time meanwhile this code is running");
+        for(let i= 0; i <=3 ; i++)
+    {
+        console.log("Performing some other task while fetching data" , i);
+    }
+
+// the result of mypromise will be the data fetched from the api if the promise is resolved successfully, or an error message if the promise is rejected.
+myPromise
+.then(users => {
+    document.write("<h2> Users Data received from API : </h2>");
+    users.forEach(u => {
+        document.write(`<p>${u.name}</p>`);
+    });
+})
+.catch(error => {
+  
+    document.write(`<p>${error}</p>`);
+});
+    </script>
+</script>
+</body>
+</html>

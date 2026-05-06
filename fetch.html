@@ -1,0 +1,22 @@
+  <!-- it is fetch based implementation-->
+<h3> Users Data in JSON</h3>
+<ul id = "users"></ul>  //first creating an element as li in html and then we will append the data to it using js
+
+<script>
+       // to retrieve the json data from this api
+       fetch('https://jsonplaceholder.typico.com/users') 
+       // convert response to json where .json() will automatically parses the data and (internally it uses JSON.parse())
+      //JSON.parse(jsonString) -- converts json string to js object -- mainly we use when receiving the data from a server
+       .then(response => response.json()) 
+      .then(data =>
+      {
+        const ul = document.getElementById("users");
+        data.forEach(user => {
+   
+   const li =  document.createElement("li");
+   li.textContent = `User Name : ${user.username} - EMail : ${user.email}`;
+   //unordered list will append the li that contains the user name and email to the ul element in html
+   ul.append(li); 
+      });
+    })
+    .catch(err => console.error("Error while loading the data", err));

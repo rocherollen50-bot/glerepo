@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopping Cart Dashboard</title>
+</head>
+<body>
+
+<h2>Shopping Cart Dashboard</h2>
+
+<div id="output"></div>
+
+<script>
+
+const cart = [
+{id:1,name:"Laptop",price:60000,qty:2,category:"Electronics"},
+{id:2,name:"Mouse",price:500,qty:5,category:"Electronics"},
+{id:3,name:"Keyboard",price:1000,qty:3,category:"Electronics"},
+{id:4,name:"Monitor",price:15000,qty:2,category:"Electronics"}
+];
+
+const productNames = cart.map(item => item.name);
+
+const totalPrice = cart.reduce(
+(sum,item)=>sum + item.price * item.qty , 0
+);
+
+const minPrice = Number(prompt("Enter minimum price"));
+
+const filteredProducts = cart
+.filter(item => item.price > minPrice)
+.map(item => item.name);
+
+const calculateTotalItems = () =>
+cart.reduce((sum,item)=>sum + item.qty ,0);
+
+document.getElementById("output").innerHTML = `
+Product Names: ${productNames.join(", ")} <br><br>
+
+Total Price: ₹${totalPrice} <br><br>
+
+Products greater than ₹${minPrice}: ${filteredProducts.join(", ")} <br><br>
+
+Total Items: ${calculateTotalItems()}
+`;
+
+</script>
+
+</body>
+</html>

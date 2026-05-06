@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount Program</title>
+</head>
+<body>
+
+<script>
+
+let productName = prompt("Enter product name");
+let price = prompt("Enter product price");
+
+price = Number(price);
+
+if(price > 1000)
+{
+    let discount = price * 0.10;
+    let finalPrice = price - discount;
+
+    document.writeln("Product Name: " + productName + "<br>");
+    document.writeln("Original Price: " + price + "<br>");
+    document.writeln("Discount Applied: 10%<br>");
+    document.writeln("Final Price: " + finalPrice);
+}
+else
+{
+    document.writeln("Product Name: " + productName + "<br>");
+    document.writeln("Price: " + price + "<br>");
+    document.writeln("No discount applied");
+}
+
+</script>
+
+</body>
+</html>

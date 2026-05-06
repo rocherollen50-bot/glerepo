@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        section h3 {
+            color: #764ba2;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        article {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        article h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        article p {
+            margin-bottom: 0;
+            color: #666;
+        }
+        
+        audio, video {
+            width: 100%;
+            margin: 1rem 0;
+            max-width: 500px;
+        }
+        
+        form {
+            max-width: 600px;
+        }
+        
+        form label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        form input, form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        
+        form button {
+            margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        form button:hover {
+            background-color: #764ba2;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #fff;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Rollen Joshua Roche</h1>
+        <p>Electronics and Communication Engineer | Web Developer</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a <strong>motivated developer</strong> interested in
+                <strong>embedded systems</strong> and currently learning
+                <em>web development</em> to improve my
+                <em>technical skills</em>.
+            </p>
+            <p>
+                With a background in Electronics and Communication Engineering, I combine 
+                hardware expertise with software development to create innovative solutions. 
+                I am passionate about learning new technologies and building projects that 
+                make a real impact.
+            </p>
+        </section>
+
+        <!-- Skills Section with Table -->
+        <section id="skills">
+            <h2>Skills</h2>
+            
+            <h3>Technical Skills</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Level</th>
+                        <th>Experience</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C Programming</td>
+                        <td>Advanced</td>
+                        <td>1+ years</td>
+                    </tr>
+                    <tr>
+                        <td>Embedded C</td>
+                        <td>Advanced</td>
+                        <td>1+ years</td>
+                    </tr>
+                    <tr>
+                        <td>Digital Electronics</td>
+                        <td>Advanced</td>
+                        <td>1+ years</td>
+                    </tr>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Intermediate</td>
+                        <td>1 months</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>Beginner</td>
+                        <td>1 months</td>
+                    </tr>
+                    <tr>
+                        <td>FPGA Design</td>
+                        <td>Intermediate</td>
+                        <td>1+ years</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Learning Goals</h3>
+            <ol>
+                <li>Master CSS and Responsive Design</li>
+                <li>Learn JavaScript and Web Frameworks</li>
+                <li>Build Full-Stack Web Projects</li>
+                <li>Develop Mobile Applications</li>
+            </ol>
+        </section>
+
+        <!-- Projects Section with Articles -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <article>
+                <h4>Gesture Controlled Robotic Arm</h4>
+                <p>
+                    Designed and implemented a robotic arm controlled using hand gesture recognition. 
+                    Used computer vision and embedded systems to process real-time hand gestures and 
+                    translate them into arm movements. Technologies: OpenCV, Arduino, C++.
+                </p>
+            </article>
+
+            <article>
+                <h4>Wireless Home Automation System</h4>
+                <p>
+                    Built a comprehensive system to control home appliances remotely using FPGA and 
+                    wireless communication protocols. Implemented secure authentication and real-time 
+                    monitoring of connected devices. Technologies: FPGA, Verilog, Wireless Protocols.
+                </p>
+            </article>
+
+            
+        </section>
+
+        <!-- Media Section
+        <section id="media">
+            <h2>Media & Demos</h2>
+
+            <h3>Audio - Project Overview</h3>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h3>Video - Project Demonstration</h3>
+            <video width="400" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section> -->
+
+        <!-- Contact Section with Form -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Have a project in mind or want to collaborate? Feel free to reach out using the form below.</p>
+
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <h3>Contact Information</h3>
+        
+        <div class="contact-info">
+            <p>Email: <a href="mailto:rocherollen50@email.com">rocherollen50@email.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+91 8553162142</a></p>
+        </div>
+
+        <div class="social-links">
+            <p>Follow Me:</p>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+
+        <p>&copy; 2026 Rollen Joshua Roche. All rights reserved.</p>
+    </footer>
+</body>
+</html>

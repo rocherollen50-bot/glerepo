@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Operations Using map, filter, reduce</title>
+</head>
+<body>
+
+<h2>Salary Operations Using Modern JavaScript Methods</h2>
+
+<script>
+
+const salaries = [45000, 67000, 36000];
+
+document.writeln("Original Salaries: " + salaries + "<br><br>");
+const newSalaries = salaries.map(function(salary) {
+    return salary + 1000;
+});
+
+document.writeln("New Salaries using map(): " + newSalaries + "<br><br>");
+const highlyPaidEmployees = salaries.filter(function(salary) {
+    return salary > 20000;
+});
+
+document.writeln("Highly Paid Employees using filter(): " + highlyPaidEmployees + "<br><br>");
+
+const totalSalary = salaries.reduce(function(total, salary) {
+    return total + salary;
+}, 0);
+
+document.writeln("Total Salary using reduce(): " + totalSalary);
+
+</script>
+
+</body>
+</html>

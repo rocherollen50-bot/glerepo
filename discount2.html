@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount Form</title>
+</head>
+<body>
+
+<h2>Product Discount Form</h2>
+
+<form onsubmit="calculateDiscount(); return false;">
+
+Product Name:
+<input type="text" id="productName"><br><br>
+
+Price:
+<input type="number" id="price"><br><br>
+
+<button type="submit">Check Discount</button>
+
+</form>
+
+<p id="result"></p>
+
+<script>
+
+function calculateDiscount()
+{
+    let productName = document.getElementById("productName").value;
+    let price = Number(document.getElementById("price").value);
+
+    let output = "";
+
+    if(price > 1000)
+    {
+        let discount = price * 0.10;
+        let finalPrice = price - discount;
+
+        output = "Product Name: " + productName +
+                 "<br>Original Price: " + price +
+                 "<br>Discount Applied: 10%" +
+                 "<br>Final Price: " + finalPrice;
+    }
+    else
+    {
+        output = "Product Name: " + productName +
+                 "<br>Price: " + price +
+                 "<br>No discount applied";
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+
+</script>
+
+</body>
+</html>
